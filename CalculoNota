@@ -3,28 +3,38 @@ import java.util.Scanner;
 public class CalculoNota{
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        //Declaracion de variables
+        double input_nota   = 99.0;
+        int nota            = 99;
+
+
+        //Usuario introduce nota con posibles decimales sin comas, solo acepta puntos
+        //https://www.baeldung.com/java-console-input-output
         System.out.print("Ingresar la nota : ");
-        int nota;
-        nota = scanner.nextInt();
+        Scanner scanner     = new Scanner(System.in);
+        input_nota          = scanner.nextDouble();
+    
+        //Convierto a entero usando un "casteo"
+        nota = (int) input_nota;
+        
         switch (nota){
             // estos 4 cases estan desaprobadas por lo que pongo directamente la rta y posteriormente el break.
-            case 1:
-            case 2:
-            case 3:
-            case 4:
+            case  1:
+            case  2:
+            case  3:
+            case  4:
                 System.out.printf("Suspenso");
                 break;
-            case 5:
-            case 6:
+            case  5:
+            case  6:
                 System.out.println("Aprobado");
                 break;
-            case 7:
-            case 8:
+            case  7:
+            case  8:
                 System.out.println("Notable");
                 break;
-            case 9:
-            case 10:
+            case  9:
+            case  10:
                 System.out.println("Sobresaliente");
                 break;
             default:
